@@ -1,4 +1,4 @@
-export class Libro{
+export class Book{
     titulo:string
     autor:string
     genero:string

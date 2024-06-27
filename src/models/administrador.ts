@@ -1,4 +1,4 @@
-export class Admiinistrador{
+export class Administrador{
     nombre:string
     identidicacion:number
     telefono:number
