@@ -73,17 +73,18 @@ function SearchFive():void {
     Library.searchFive
 }
 // switch
-const continuar:string = "si";
-while (continuar.toLocaleLowerCase() === "si") {
+const decision:number;
+do {
     const menu:string=`MENU\n"
     1- Mostrar la pila de libros\n
     2- Agregar un nuevo libro a la pila\n
     3- Borrar un libro de la pila de libros\n
     4- Listar libros\n
     5- Resumenes de este segmento\n
-    6- Funcionalidades de este segmento\n\n
+    6- Funcionalidades de este segmento\n
+    7- Salir\n\n
     Ingrese el numero de lo que desea hacer`
-    const decision:number=parseInt(prompt(menu) || "0");
+    decision=parseInt(prompt(menu) || "0");
     switch (decision) {
         case 1:
             ListBooks()
@@ -99,7 +100,7 @@ while (continuar.toLocaleLowerCase() === "si") {
             1- Manejo de Array Methods\n
             2-Manejo de Array Methods + spreed operator.\n\n
             Ingrese el numero de lo que desea hacer`
-            let decision2=parseInt(prompt(menu1) || "0");
+            const decision2:number=parseInt(prompt(menu1) || "0");
             switch (decision2) {
             case 1:
             // MANEJO DE ARRAY METHODS
@@ -117,7 +118,7 @@ while (continuar.toLocaleLowerCase() === "si") {
             2- Manejo de Array methods sort()\n
             3- Manejo Array Methods encadenados.\n\n
             Ingrese el numero de lo que desea hacer`
-            let decision3=parseInt(prompt(menu2)|| "0");
+            const decision3:number=parseInt(prompt(menu2)|| "0");
             switch (decision3) {
             case 1:
             // Manejo de Array methods Filter()
@@ -141,7 +142,7 @@ while (continuar.toLocaleLowerCase() === "si") {
             4- Un objeto del array por genero\n
             5- Un objeto del array por idioma\n
             Ingrese el numero de lo que desea hacer`
-            let decision4=parseInt(prompt(menu3)||"0");
+            const decision4:number=parseInt(prompt(menu3)||"0");
             switch (decision4) {
                 case 1:
                     SearchOne();
@@ -159,9 +160,11 @@ while (continuar.toLocaleLowerCase() === "si") {
                     SearchFive();
                     break;
             }
-        break; 
+        break;
+        case 7:
+            console.log("Saliendo");
         default:
+            console.log("Opcion no valida");
             break;
     }
-continuar= prompt("Deseas continuar si/no")
-}
+} while (decision>0 && decision <7);
