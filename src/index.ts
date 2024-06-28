@@ -73,7 +73,7 @@ function SearchFive():void {
     Library.searchFive
 }
 // switch
-const decision:number;
+let decision: number;
 do {
     const menu:string=`MENU\n"
     1- Mostrar la pila de libros\n
@@ -167,4 +167,4 @@ do {
             console.log("Opcion no valida");
             break;
     }
-} while (decision>0 && decision <7);
+} while (decision !== 7);
